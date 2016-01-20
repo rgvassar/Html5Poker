@@ -1,0 +1,23 @@
+<nav class="navbar navbar-fixed-top navbar-light bg-faded">
+    <a class="navbar-brand" href="#">CryptoBluff</a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Cashier</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Cash Games</a>
+        </li>
+        <li *ngIf="signedIn" class="nav-item pull-xs-right active">
+            <a class="nav-link" href="#">Sign Out</a>
+        </li>
+        <li class="nav-item pull-xs-right active">
+            <a class="nav-link" href="#">{{signInText}}</a>
+        </li>
+    </ul>
+</nav>
+<div id="wrapper">
+    <poker-window>
+        <table-list win-content></table-list>
+    </poker-window>
+</div>
+

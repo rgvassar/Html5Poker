@@ -1,0 +1,24 @@
+{
+  "name": "CyptoBluff",
+  "description": "HTML5 Crypto Currency Poker Site",
+  "main": "",
+  "authors": [
+    "Me"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "wwwroot/public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^2.2.0",
+    "tether": "~1.1.1"
+  }
+}

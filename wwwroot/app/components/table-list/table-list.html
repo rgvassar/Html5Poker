@@ -1,0 +1,29 @@
+<div class="window-top"></div>
+<div class="not-draggable table-wrapper">
+    <table class="table table-hover table-sm">
+        <thead class="thead-default">
+            <tr>
+                <th>Table #</th>
+                <th>Game</th>
+                <th>Limit</th>
+                <th>Small Blind</th>
+                <th>Big Blind</th>
+                <th>Players</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="#table of tables">
+                <td>{{table.id}}</td>
+                <td>{{table.game}}</td>
+                <td>{{table.limit}}</td>
+                <td>{{table.smallBet}}</td>
+                <td>{{table.bigBet}}</td>
+                <td>{{table.playerCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav class="navbar navbar-dark bg-primary footer">
+    <a class="navbar-brand" href="#">tables</a>
+</nav>
