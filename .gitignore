@@ -5,3 +5,5 @@ lib
 *.js.map
 npm-debug.log.*
 *.css
+.sass-cache
+*.css.map

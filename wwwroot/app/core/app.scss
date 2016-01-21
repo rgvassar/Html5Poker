@@ -1,0 +1,14 @@
+@import "../_variables.scss";
+
+.main-nav {
+    border-radius: 0;
+}
+
+.navbar {
+    height: $navbar-height;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+}
