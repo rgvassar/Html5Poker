@@ -4,7 +4,7 @@ import {TABLES} from "./mock-tables";
 @Injectable()
 
 export class TableService {
-    getTables() {
+    public getTables() {
         return Promise.resolve(TABLES);
     }
 }
