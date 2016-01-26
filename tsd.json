@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "a6ff9f6e195a334afd89e4b721d05e9520eee4c0"
+      "commit": "4a8a2ed5c35be37a5f1a199a391be21548c81c09"
     },
     "express/express.d.ts": {
       "commit": "40c60850ad6c8175a62d5ab48c4e016ea5b3dffe"
@@ -31,6 +31,18 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3"
+    },
+    "gulp-sass/gulp-sass.d.ts": {
+      "commit": "4a8a2ed5c35be37a5f1a199a391be21548c81c09"
+    },
+    "gulp-autoprefixer/gulp-autoprefixer.d.ts": {
+      "commit": "4a8a2ed5c35be37a5f1a199a391be21548c81c09"
+    },
+    "gulp-typescript/gulp-typescript.d.ts": {
+      "commit": "4a8a2ed5c35be37a5f1a199a391be21548c81c09"
+    },
+    "gulp-sourcemaps/gulp-sourcemaps.d.ts": {
+      "commit": "4a8a2ed5c35be37a5f1a199a391be21548c81c09"
     }
   }
 }
