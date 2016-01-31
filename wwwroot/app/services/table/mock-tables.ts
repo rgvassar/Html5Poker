@@ -1,4 +1,4 @@
-import {TableInfo} from "./interfaces/table-info.ts";
+import {TableInfo} from "../../interfaces/table-info.ts";
 
 export var TABLES: TableInfo[] = [
     { bigBet: 4, game: "Texas Hold 'em", id: 11, limit: "No Limit", playerCount: 9, smallBet: 2,  },

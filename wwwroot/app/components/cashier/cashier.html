@@ -1,0 +1,29 @@
+<div class="window-top"></div>
+<div class="not-draggable content-wrapper">
+    <div class="card">
+        <div class="card-header">
+            Personal Information
+        </div>
+        <ul *ngIf="account" class="list-group">
+            <li class="list-group-item">Player Name: {{account.playerName}}</li>
+            <li class="list-group-item">E-mail: {{account.email}}</li>
+        </ul>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary-outline">Change Info</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Account Balance
+        </div>
+        <ul *ngIf="account" class="list-group">
+            <li class="list-group-item">Available: {{account.available}}</li>
+            <li class="list-group-item">In Play: {{account.inPlay}}</li>
+            <li class="list-group-item">Total: {{account.available + account.inPlay}}</li>
+        </ul>
+    </div>
+</div>
+
+<nav class="navbar navbar-dark bg-success footer">
+    <a class="navbar-brand" href="#">Cashier</a>
+</nav>

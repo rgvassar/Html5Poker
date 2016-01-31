@@ -5,7 +5,7 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "concurrent \"npm run tsc:w\" \"nodemon app.js\" "
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "concurrently": "^1.0.0",
