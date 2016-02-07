@@ -6,15 +6,16 @@ import autoprefixer = require("gulp-autoprefixer");
 import ts = require("gulp-typescript");
 import sourcemaps = require("gulp-sourcemaps");
 
-let tsClientFiles = "./wwwroot/app/**/*.ts";
-let tsServerFiles = "./*.ts";
-let typings = "./typings/**/*.ts";
+let tsClientFiles = "./wwwroot/app/**/*.ts",
+    tsServerFiles = ["./*.ts", "./routes/*.ts"],
+    tsFiles = tsServerFiles.concat(tsClientFiles),
+    typings = "./typings/**/*.ts";
 
 let sassFiles = "./wwwroot/app/**/*.scss";
 
 gulp.task("vet", () => {
     return gulp
-        .src([tsClientFiles, tsServerFiles])
+        .src(tsFiles)
         .pipe(tslint())
         .pipe(tslint.report(stylish));
 });
@@ -51,7 +52,7 @@ gulp.task("ts-client", () => {
 
 gulp.task("ts-server", () => {
     return gulp
-        .src([tsServerFiles, typings], { base: "./" })
+        .src(tsServerFiles.concat(typings), { base: "./" })
         .pipe(sourcemaps.init())
         .pipe(ts({
             module: "commonjs",
@@ -65,10 +66,10 @@ gulp.task("ts-server", () => {
 
 gulp.task("ts-watcher", () => {
     gulp.watch([tsClientFiles], ["ts-client"]);
-    gulp.watch([tsServerFiles], ["ts-server"]);
+    gulp.watch(tsServerFiles, ["ts-server"]);
 });
  gulp.task("watch-all", () => {
     gulp.watch([tsClientFiles], ["ts-client"]);
-    gulp.watch([tsServerFiles], ["ts-server"]);
+    gulp.watch(tsServerFiles, ["ts-server"]);
     gulp.watch([sassFiles], ["styles"]);
 });

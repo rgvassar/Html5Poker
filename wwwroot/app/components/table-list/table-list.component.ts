@@ -17,6 +17,8 @@ export class TableListComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this._tableService.getTableList().then(tables => this.tables = tables);
+        this._tableService.getTableList().subscribe(
+            data => this.tables = data
+        );
     }
 }
