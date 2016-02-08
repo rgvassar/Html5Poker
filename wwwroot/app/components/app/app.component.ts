@@ -22,8 +22,26 @@ export class AppComponent {
     public signedIn: boolean = false;
     public tableListId: string = "tables";
     public cashierId: string = "cashier";
+    public tableListVisible: boolean = true;
+    public cashierVisible: boolean = false;
 
     constructor(private _tableService: TableService, private _accountService: AccountService) {
 
+    }
+
+    public closeTableList() {
+        this.tableListVisible = false;
+    }
+
+    public showTableList() {
+        this.tableListVisible = true;
+    }
+
+    public closeCashier() {
+        this.cashierVisible = false;
+    }
+
+    public showCashier() {
+        this.cashierVisible = true;
     }
 }

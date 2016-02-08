@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, EventEmitter, Output} from "angular2/core";
 import {OnInit} from "angular2/core";
 import {Account} from "../../../../interfaces/account.ts";
 import {AccountService} from "../../services/account/account.service";
@@ -11,6 +11,7 @@ import {AccountService} from "../../services/account/account.service";
 
 export class CashierComponent implements OnInit {
     public account: Account;
+    @Output("close-cashier") public closeCashier: EventEmitter<any> = new EventEmitter();
 
     constructor(private _accountService: AccountService) {
 
@@ -20,5 +21,9 @@ export class CashierComponent implements OnInit {
         this._accountService.getAccount().subscribe(
             data => this.account = data
         );
+    }
+
+    public close() {
+        this.closeCashier.emit(null);
     }
 }
