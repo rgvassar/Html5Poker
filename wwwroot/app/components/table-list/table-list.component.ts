@@ -1,6 +1,6 @@
 import {Component} from "angular2/core";
 import {OnInit} from "angular2/core";
-import {TableInfo} from "../../interfaces/table-info.ts";
+import {TableInfo} from "../../../../interfaces/table-info.ts";
 import {TableService} from "../../services/table/table.service";
 
 @Component({

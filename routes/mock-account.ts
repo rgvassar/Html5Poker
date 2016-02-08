@@ -1,4 +1,4 @@
-import {Account} from "../../interfaces/account.ts";
+import {Account} from "../interfaces/account.ts";
 
 export var ACCOUNT: Account = {
     available: 505.50,

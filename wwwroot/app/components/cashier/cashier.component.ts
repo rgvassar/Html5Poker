@@ -1,6 +1,6 @@
 import {Component} from "angular2/core";
 import {OnInit} from "angular2/core";
-import {Account} from "../../interfaces/account.ts";
+import {Account} from "../../../../interfaces/account.ts";
 import {AccountService} from "../../services/account/account.service";
 
 @Component({
@@ -17,6 +17,8 @@ export class CashierComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this._accountService.getAccount().then(account => this.account = account);
+        this._accountService.getAccount().subscribe(
+            data => this.account = data
+        );
     }
 }

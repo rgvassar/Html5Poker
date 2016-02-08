@@ -7,7 +7,7 @@ import ts = require("gulp-typescript");
 import sourcemaps = require("gulp-sourcemaps");
 
 let tsClientFiles = "./wwwroot/app/**/*.ts",
-    tsServerFiles = ["./*.ts", "./routes/*.ts"],
+    tsServerFiles = ["./*.ts", "./routes/*.ts", "./interfaces/*.ts"],
     tsFiles = tsServerFiles.concat(tsClientFiles),
     typings = "./typings/**/*.ts";
 

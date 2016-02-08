@@ -5,7 +5,7 @@ import "rxjs/add/operator/map";
 @Injectable()
 
 export class TableService {
-    constructor(private _http: Http){
+    constructor(private _http: Http) {
 
     }
 
