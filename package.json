@@ -1,7 +1,7 @@
 {
-  "name": "CryptoBluffServer",
+  "name": "Html5Poker",
   "version": "0.0.1",
-  "description": "HTML5 Crypto Currency Poker Site",
+  "description": "HTML5 Poker Site",
   "scripts": {
     "start": "node app.js",
     "postinstall": "bower install"

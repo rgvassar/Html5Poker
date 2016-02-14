@@ -1,6 +1,6 @@
 {
-  "name": "CyptoBluff",
-  "description": "HTML5 Crypto Currency Poker Site",
+  "name": "Html5Poker",
+  "description": "HTML5 Poker Site",
   "main": "",
   "authors": [
     "Me"
@@ -19,6 +19,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^2.2.0",
-    "tether": "~1.1.1"
+    "tether": "~1.1.1",
+    "jquery-ui": "^1.11.4"
   }
 }
