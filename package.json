@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "HTML5 Crypto Currency Poker Site",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "express": "~4.13.3",
