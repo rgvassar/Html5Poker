@@ -7,7 +7,7 @@ import * as sourcemaps from "gulp-sourcemaps";
 
 const stylish = require("gulp-tslint-stylish");
 
-let tsClientFiles = "./wwwroot/app/**/*.ts",
+let tsClientFiles = ["./wwwroot/app/**/*.ts", "./interfaces/*.ts", "./models/*.ts"],
     tsServerFiles = ["./*.ts", "./routes/*.ts", "./interfaces/*.ts", "./models/*.ts"],
     tsFiles = tsServerFiles.concat(tsClientFiles),
     typings = ["./typings/main/**/*.ts", "./typings/main.d.ts"];
@@ -36,7 +36,7 @@ gulp.task("sass-watcher", () => {
 
 gulp.task("ts-client", () => {
     return gulp
-        .src([tsClientFiles], { base: "./" })
+        .src(tsClientFiles.concat(typings), { base: "./" })
         .pipe(sourcemaps.init())
         .pipe(ts({
             emitDecoratorMetadata: true,
@@ -66,11 +66,11 @@ gulp.task("ts-server", () => {
 });
 
 gulp.task("ts-watcher", () => {
-    gulp.watch([tsClientFiles], ["ts-client"]);
+    gulp.watch(tsClientFiles, ["ts-client"]);
     gulp.watch(tsServerFiles, ["ts-server"]);
 });
  gulp.task("watch-all", () => {
-    gulp.watch([tsClientFiles], ["ts-client"]);
+    gulp.watch(tsClientFiles, ["ts-client"]);
     gulp.watch(tsServerFiles, ["ts-server"]);
     gulp.watch([sassFiles], ["styles"]);
 });
