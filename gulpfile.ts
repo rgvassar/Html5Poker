@@ -1,15 +1,16 @@
-import gulp = require("gulp");
+import * as gulp from "gulp";
 import tslint from "gulp-tslint";
-let stylish = require("gulp-tslint-stylish");
-import sass = require("gulp-sass");
-import autoprefixer = require("gulp-autoprefixer");
-import ts = require("gulp-typescript");
-import sourcemaps = require("gulp-sourcemaps");
+import * as sass from "gulp-sass";
+import * as autoprefixer from "gulp-autoprefixer";
+import * as ts from "gulp-typescript";
+import * as sourcemaps from "gulp-sourcemaps";
+
+const stylish = require("gulp-tslint-stylish");
 
 let tsClientFiles = "./wwwroot/app/**/*.ts",
-    tsServerFiles = ["./*.ts", "./routes/*.ts", "./interfaces/*.ts"],
+    tsServerFiles = ["./*.ts", "./routes/*.ts", "./interfaces/*.ts", "./models/*.ts"],
     tsFiles = tsServerFiles.concat(tsClientFiles),
-    typings = "./typings/**/*.ts";
+    typings = ["./typings/main/**/*.ts", "./typings/main.d.ts"];
 
 let sassFiles = "./wwwroot/app/**/*.scss";
 
