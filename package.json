@@ -4,7 +4,7 @@
   "description": "HTML5 Poker Site",
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bower install && tsc && gulp styles && gulp ts-server && gulp ts-client"
+    "postinstall": "bower install && gulp styles && gulp ts-server && gulp ts-client"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.11",

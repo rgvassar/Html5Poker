@@ -1,11 +1,12 @@
 node_modules
 typings
 lib
-*.js.map
 npm-debug.log.*
 .sass-cache
 *.css
 *.css.map
 .tmp
 *.js
+!gulpfile.js
+*.js.map
 *.css
