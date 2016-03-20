@@ -7,7 +7,6 @@ npm-debug.log.*
 *.css.map
 .tmp
 *.js
-!gulpfile.js
 *.js.map
 *.css
 *.log
