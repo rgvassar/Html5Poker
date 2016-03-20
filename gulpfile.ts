@@ -6,13 +6,9 @@ import * as ts from "gulp-typescript";
 import * as sourcemaps from "gulp-sourcemaps";
 
 const stylish = require("gulp-tslint-stylish");
-
-let tsClientFiles = ["./wwwroot/app/**/*.ts", "./interfaces/*.ts", "./models/*.ts"],
-    tsServerFiles = ["./*.ts", "./routes/*.ts", "./interfaces/*.ts", "./models/*.ts"],
-    tsFiles = tsServerFiles.concat(tsClientFiles),
-    typings = ["./typings/main/**/*.ts", "./typings/main.d.ts"];
-
-let sassFiles = "./wwwroot/app/**/*.scss";
+const sassFiles = "./wwwroot/app/**/*.scss";
+const tsProject = ts.createProject("tsconfig.json");
+const tsFiles = ["./*.ts", "./**/*.ts"];
 
 gulp.task("vet", () => {
     return gulp
@@ -34,43 +30,18 @@ gulp.task("sass-watcher", () => {
 });
 
 
-gulp.task("ts-client", () => {
-    return gulp
-        .src(tsClientFiles.concat(typings), { base: "./" })
+gulp.task("ts", () => {
+    return tsProject
+        .src()
         .pipe(sourcemaps.init())
-        .pipe(ts({
-            emitDecoratorMetadata: true,
-            experimentalDecorators: true,
-            module: "system",
-            moduleResolution: "node",
-            noImplicitAny: true,
-            removeComments: true,
-            target: "es5"
-        }))
+        .pipe(ts(tsProject))
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest("./"));
 });
-
-gulp.task("ts-server", () => {
-    return gulp
-        .src(tsServerFiles.concat(typings), { base: "./" })
-        .pipe(sourcemaps.init())
-        .pipe(ts({
-            module: "commonjs",
-            noImplicitAny: true,
-            removeComments: true,
-            target: "es5"
-        }))
-        .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest("./"));
-});
-
-gulp.task("ts-watcher", () => {
-    gulp.watch(tsClientFiles, ["ts-client"]);
-    gulp.watch(tsServerFiles, ["ts-server"]);
+gulp.task("watch-ts", () => {
+    gulp.watch(tsFiles, ["ts"]);
 });
  gulp.task("watch-all", () => {
-    gulp.watch(tsClientFiles, ["ts-client"]);
-    gulp.watch(tsServerFiles, ["ts-server"]);
+    gulp.watch(tsFiles, ["ts"]);
     gulp.watch([sassFiles], ["styles"]);
 });

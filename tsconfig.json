@@ -3,12 +3,15 @@
         "module": "commonjs",
         "sourceMap": true,
         "target": "es5",
-        "removeComments": false,
-        "noImplicitAny": true
+        "removeComments": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
     },
     "exclude": [
         "node_modules",
-        "wwwroot",
+        "wwwroot/lib",
         "typings/browser",
         "typings/browser.d.ts"
     ]
