@@ -10,6 +10,6 @@ export class AccountService {
     }
 
     public getAccount() {
-        return this._http.get("http://localhost:3000/account").map(res => res.json());
+        return this._http.get("./account").map(res => res.json());
     }
 }

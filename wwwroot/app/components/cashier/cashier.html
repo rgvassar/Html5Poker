@@ -17,9 +17,9 @@
             Account Balance
         </div>
         <ul *ngIf="account" class="list-group">
-            <li class="list-group-item">Available: {{account.available}}</li>
-            <li class="list-group-item">In Play: {{account.inPlay}}</li>
-            <li class="list-group-item">Total: {{account.available + account.inPlay}}</li>
+            <li class="list-group-item">Available: {{account.fundsAvailable}}</li>
+            <li class="list-group-item">In Play: {{account.fundsInPlay}}</li>
+            <li class="list-group-item">Total: {{account.fundsAvailable + account.fundsInPlay}}</li>
         </ul>
     </div>
 </div>

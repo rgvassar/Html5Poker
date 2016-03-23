@@ -22,7 +22,7 @@ export function addAccount(req: express.Request, res: express.Response) {
 };
 
 export function getAccount(req: express.Request, res: express.Response) {
-    const query = accountModel.find({});
+    const query = accountModel.findOne({});
 
     query.exec((err, results) => {
         if (err) {
