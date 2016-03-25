@@ -7,7 +7,7 @@ import * as cookieParser from "cookie-parser";
 import * as passport from "passport";
 import * as session from "express-session";
 
-mongoose.connect("mongodb://" + process.env.MONGO_USER + ":" + process.env.MONGO_PASS + "@ds013848.mongolab.com:13848/heroku_vm68ggq3");
+mongoose.connect(process.env.MONGO_STRING);
 const app: express.Express = express();
 app.use(bodyParser.json());
 app.use("/", express.static(__dirname + "/wwwroot" ));
