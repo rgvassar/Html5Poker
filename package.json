@@ -2,6 +2,10 @@
   "name": "Html5Poker",
   "version": "0.0.1",
   "description": "HTML5 Poker Site",
+  "engines": {
+      "node": "^5.7.1",
+      "npm": "^3.6.0"
+  },
   "scripts": {
     "start": "node app.js",
     "postinstall": "bower install && typings install && tsc && gulp styles"
@@ -40,3 +44,4 @@
   "license": "BSD-3-Clause",
   "author": "Russell Vassar"
 }
+
