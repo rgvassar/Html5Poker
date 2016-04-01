@@ -33,7 +33,7 @@ export function tables(req: express.Request, res: express.Response): void {
 
 function getTables (): Promise<string[]> {
     const tables: string[] = [];
-    const obj: {} = {};
+    const obj: any = {};
     return new Promise((resolve, reject) => {
         const scanTables = (cursor: string) => {
             client.scan(cursor, "MATCH", "table:*", "COUNT", "1000", (err: any, res: [string, string[]]) => {
