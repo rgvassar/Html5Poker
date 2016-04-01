@@ -7,8 +7,9 @@ import * as cookieParser from "cookie-parser";
 import * as passport from "passport";
 import * as session from "express-session";
 
-mongoose.connect(process.env.MONGO_STRING);
+mongoose.connect(process.env.MONGOLAB_URI);
 const app: express.Express = express();
+
 app.use(bodyParser.json());
 app.use("/", express.static(__dirname + "/wwwroot" ));
 app.use("/node_modules", express.static(__dirname + "/node_modules" ));

@@ -10,6 +10,6 @@ export class TableService {
     }
 
     public getTableList() {
-        return this._http.get("http://localhost:3000/tables").map(res => res.json());
+        return this._http.get("./tables").map(res => res.json());
     }
 }

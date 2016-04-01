@@ -19,6 +19,7 @@
     "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
     "passport": "registry:dt/passport#0.2.0+20160317120654",
     "q": "registry:dt/q#0.0.0+20160317120654",
+    "redis": "registry:dt/redis#0.12.1+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160317120654"
   }
 }
