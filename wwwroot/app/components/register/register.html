@@ -1,0 +1,21 @@
+<div class="container m-t-1">
+    <form class="col-lg-offset-3 col-lg-6" (ngSubmit)="onSubmit()">
+      <fieldset class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" [(ngModel)]="email" required/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="displayName">Display Name</label>
+        <input type="text" class="form-control" id="displayName" placeholder="Enter Display Name" [(ngModel)]="displayName" required/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" [(ngModel)]="password" required/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="passwordConf">Confirm Password</label>
+        <input type="password" class="form-control" id="passwordConf" placeholder="Confirm Password" [(ngModel)]="passwordConf" required/>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>

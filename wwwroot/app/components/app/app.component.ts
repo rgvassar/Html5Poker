@@ -1,47 +1,37 @@
 /// <reference path="../../../../node_modules/angular2/typings/browser.d.ts"/>
-import {Component} from "angular2/core";
+import {Component, ViewChild} from "angular2/core";
 import {HTTP_PROVIDERS} from "angular2/http";
-import {TableListComponent} from "../table-list/table-list.component";
-import {CashierComponent} from "../cashier/cashier.component";
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
 import {TableService} from "../../services/table/table.service";
 import {AccountService} from "../../services/account/account.service";
-// import {OnInit} from "angular2/core";
-import {PokerWindowComponent} from "../poker-window/poker-window.component";
-
+import {PlayComponent} from "../play/play.component";
+import {RegisterComponent} from "../register/register.component";
 
 @Component({
-    directives: [PokerWindowComponent, TableListComponent, CashierComponent],
-    providers: [TableService, AccountService, HTTP_PROVIDERS],
+    directives: [PlayComponent, RegisterComponent, ROUTER_DIRECTIVES],
+    providers: [TableService, AccountService, HTTP_PROVIDERS, ROUTER_PROVIDERS],
     selector: "my-app",
     styleUrls: ["app/components/app/app.css"],
     templateUrl: "app/components/app/app.html"
 })
+@RouteConfig([
+    {path: "/", name: "PlayPoker", component: PlayComponent, useAsDefault: true},
+    {path: "/register", name: "Register", component: RegisterComponent}
+])
 
 export class AppComponent {
     public signInText: string = "Sign In";
     public signedIn: boolean = false;
-    public tableListId: string = "tables";
-    public cashierId: string = "cashier";
-    public tableListVisible: boolean = true;
-    public cashierVisible: boolean = false;
+    @ViewChild(PlayComponent) play: PlayComponent;
 
     constructor(private _tableService: TableService, private _accountService: AccountService) {
-
-    }
-
-    public closeTableList() {
-        this.tableListVisible = false;
     }
 
     public showTableList() {
-        this.tableListVisible = true;
-    }
-
-    public closeCashier() {
-        this.cashierVisible = false;
+        this.play.tableListVisible = true;
     }
 
     public showCashier() {
-        this.cashierVisible = true;
+        this.play.cashierVisible = true;
     }
 }
