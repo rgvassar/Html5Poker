@@ -1,5 +1,6 @@
 /// <reference path="../../../../node_modules/angular2/typings/browser.d.ts"/>
 import {Component, ViewChild} from "angular2/core";
+import {FORM_PROVIDERS} from "angular2/common";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
 import {TableService} from "../../services/table/table.service";
@@ -9,7 +10,7 @@ import {RegisterComponent} from "../register/register.component";
 
 @Component({
     directives: [PlayComponent, RegisterComponent, ROUTER_DIRECTIVES],
-    providers: [TableService, AccountService, HTTP_PROVIDERS, ROUTER_PROVIDERS],
+    providers: [TableService, AccountService, HTTP_PROVIDERS, ROUTER_PROVIDERS, FORM_PROVIDERS],
     selector: "my-app",
     styleUrls: ["app/components/app/app.css"],
     templateUrl: "app/components/app/app.html"
