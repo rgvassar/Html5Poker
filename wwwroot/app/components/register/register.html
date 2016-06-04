@@ -12,15 +12,15 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Enter Password" ngControl="password" required/>
         <small class="text-muted">
-            <span [hidden]="!password.errors || !password.errors.minlength">Must be 8 or more characters.</span>
-            <span [hidden]="!password.errors || !password.errors.maxlength">Must be less than 160 characters.</span>
-            <span [hidden]="!password.errors || !password.errors.pattern || password.errors.minlength || password.errors.maxlength">Must have 1 lowercase letter, uppercase letter, number, and special character.</span>
+            <span *ngIf="password.errors && password.errors.minlength">Must be 8 or more characters.</span>
+            <span *ngIf="password.errors && password.errors.maxlength">Must be less than 160 characters.</span>
+            <span *ngIf="password.errors && password.errors.pattern && !password.errors.minlength && !password.errors.maxlength">Must have 1 lowercase letter, uppercase letter, number, and special character.</span>
         </small>
       </fieldset>
       <fieldset class="form-group">
         <label for="passwordConf">Confirm Password</label>
         <input type="password" class="form-control" id="passwordConf" placeholder="Confirm Password" [(ngModel)]="passwordConf" required/>
-        <small class="text-muted" [hidden]="passwordsMatch">Passwords must match.</small>
+        <small class="text-muted" *ngIf="!passwordsMatch">Passwords must match.</small>
       </fieldset>
       <button type="submit" class="btn btn-primary">Register</button>
     </form>

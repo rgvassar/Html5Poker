@@ -13,8 +13,23 @@
         <li class="nav-item pull-xs-right active">
             <a class="nav-link" href="" [routerLink]="['Register']">Register</a>
         </li>
-        <li class="nav-item pull-xs-right active">
-            <a class="nav-link" href="">{{signInText}}</a>
+        <li class="nav-item pull-xs-right active dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{signInText}}</a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="row">
+                    <fieldset class="form-group">
+                        <div class="col-xs-3"><label for="email">Email</label></div>
+                        <div class="col-xs-9"><input type="email" class="form-control" id="email" placeholder="Enter email"></div>
+                    </fieldset>
+                </div>
+                <div class="row">
+                    <fieldset class="form-group">
+                        <div class="col-xs-3"><label for="password">Password</label></div>
+                        <div class="col-xs-9"><input type="password" class="form-control" id="password" placeholder="Enter password"></div>
+                    </fieldset>
+                </div>
+                <button type="button" class="btn btn-primary pull-xs-right">Sign In</button>
+            </div>
         </li>
     </ul>
 </nav>
