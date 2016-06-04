@@ -3,11 +3,10 @@ import {accountModel} from "../models/account.model";
 
 
 export function addAccount(req: express.Request, res: express.Response) {
-    console.log(req.body);
     const entry = new accountModel({
         email: req.body.email,
-        fundsAvailable: req.body.fundsAvailable,
-        fundsInPlay: req.body.fundsInPlay,
+        fundsAvailable: "0",
+        fundsInPlay: "0",
         password: req.body.password,
         playerName: req.body.playerName
     });

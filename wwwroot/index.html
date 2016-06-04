@@ -5,32 +5,34 @@
         <link rel="stylesheet" type="text/css" href="lib/tether/dist/css/tether.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jquery-ui/themes/base/jquery-ui.min.css" />
     </head>
-</html>
-<body>
-    <my-app>Loading...</my-app>
-    <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="lib/jquery-ui/ui/minified/core.min.js"></script>
-    <script src="lib/jquery-ui/ui/minified/widget.min.js"></script>
-    <script src="lib/jquery-ui/ui/minified/mouse.min.js"></script>
-    <script src="lib/jquery-ui/ui/minified/draggable.min.js"></script>
-    <script src="lib/jquery-ui/ui/minified/resizable.min.js"></script>
-    <script src="lib/tether/dist/js/tether.min.js" ></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.min.js" ></script>
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
-    <script>
-        System.config({
-            packages: {
-                app: {
-                    format: "cjs",
-                    defaultExtension: "js"
+    <base href="/">
+    <body>
+        <my-app>Loading...</my-app>
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="lib/jquery-ui/ui/minified/core.min.js"></script>
+        <script src="lib/jquery-ui/ui/minified/widget.min.js"></script>
+        <script src="lib/jquery-ui/ui/minified/mouse.min.js"></script>
+        <script src="lib/jquery-ui/ui/minified/draggable.min.js"></script>
+        <script src="lib/jquery-ui/ui/minified/resizable.min.js"></script>
+        <script src="lib/tether/dist/js/tether.min.js" ></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.min.js" ></script>
+        <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <script src="node_modules/rxjs/bundles/Rx.js"></script>
+        <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+        <script src="node_modules/angular2/bundles/http.dev.js"></script>
+        <script src="node_modules/angular2/bundles/router.dev.js"></script>
+        <script>
+            System.config({
+                packages: {
+                    app: {
+                        format: "cjs",
+                        defaultExtension: "js"
+                    }
                 }
-            }
-        });
-        System.import("app/boot")
-            .then(null, console.error.bind(console));
-    </script>
-</body>
+            });
+            System.import("app/boot")
+                .then(null, console.error.bind(console));
+        </script>
+    </body>
+</html>

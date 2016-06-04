@@ -16,4 +16,7 @@ app.use("/node_modules", express.static(__dirname + "/node_modules" ));
 app.get("/tables", tableRouter.tables);
 app.get("/account", accountRouter.getAccount);
 app.post("/account", accountRouter.addAccount);
+app.use((req, res) => {
+    res.sendFile("wwwroot/index.html", {root: __dirname});
+});
 app.listen(process.env.PORT || 3000);
