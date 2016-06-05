@@ -10,3 +10,4 @@ npm-debug.log.*
 *.js.map
 *.css
 *.log
+!systemjs.config.js

@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Output} from "angular2/core";
-import {OnInit} from "angular2/core";
+import {Component, OnInit} from "@angular/core";
+import {TableService} from "../../services/table/table.service";
 import {IAccount} from "../../../../models/account.model.ts";
 import {AccountService} from "../../services/account/account.service";
 
@@ -11,19 +11,17 @@ import {AccountService} from "../../services/account/account.service";
 
 export class CashierComponent implements OnInit {
     public account: IAccount;
-    @Output("close-cashier") public closeCashier: EventEmitter<any> = new EventEmitter();
 
-    constructor(private _accountService: AccountService) {
-
+    constructor(private _accountService: AccountService, private _tableService: TableService) {
     }
 
     public ngOnInit() {
         this._accountService.getAccount().subscribe(
-            data => this.account = data
+            (data: IAccount) => this.account = data
         );
     }
 
     public close() {
-        this.closeCashier.emit(null);
+        this._tableService.showCashier = false;
     }
 }
