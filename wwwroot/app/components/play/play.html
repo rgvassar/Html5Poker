@@ -1,6 +1,6 @@
-<poker-window *ngIf="tableListVisible" [id]="tableListId">
-    <table-list (close-tables)="closeTableList()" win-content></table-list>
+<poker-window *ngIf="_tableService.showTableList" [id]="tableListId">
+    <table-list win-content></table-list>
 </poker-window>
-<poker-window *ngIf="cashierVisible" [id]="cashierId">
-    <cashier (close-cashier)="closeCashier()" win-content></cashier>
+<poker-window *ngIf="_tableService.showCashier" [id]="cashierId">
+    <cashier win-content></cashier>
 </poker-window>

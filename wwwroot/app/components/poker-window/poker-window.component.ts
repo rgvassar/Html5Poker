@@ -1,5 +1,4 @@
-import {Component} from "angular2/core";
-import {AfterViewInit} from "angular2/core";
+import {Component, AfterViewInit} from "@angular/core";
 
 @Component({
     inputs: ["id"],

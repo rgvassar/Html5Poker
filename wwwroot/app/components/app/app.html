@@ -1,17 +1,17 @@
 <nav class="navbar navbar-dark bg-inverse main-nav">
-    <a class="navbar-brand" href="#">Html5Poker</a>
+    <span class="navbar-brand">Html5Poker</span>
     <ul class="nav navbar-nav">
         <li class="nav-item active">
-            <a class="nav-link" href="" (click)="showTableList(true)" [routerLink]="['PlayPoker']">Cash Games</a>
+            <a class="nav-link" (click)="showTableList($event)" [routerLink]="['PlayPoker']">Cash Games</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="" (click)="showCashier(true)" [routerLink]="['PlayPoker']">Cashier</a>
+            <a class="nav-link" (click)="showCashier($event)" [routerLink]="['PlayPoker']">Cashier</a>
         </li>
         <li *ngIf="signedIn" class="nav-item pull-xs-right active">
             <a class="nav-link" href="">Sign Out</a>
         </li>
         <li class="nav-item pull-xs-right active">
-            <a class="nav-link" href="" [routerLink]="['Register']">Register</a>
+            <a class="nav-link" [routerLink]="['Register']">Register</a>
         </li>
         <li class="nav-item pull-xs-right active dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{signInText}}</a>
