@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Output} from "angular2/core";
-import {OnInit} from "angular2/core";
+import {Component, OnInit} from "@angular/core";
 import {TableInfo} from "../../../../interfaces/table-info.ts";
 import {TableService} from "../../services/table/table.service";
 
@@ -11,7 +10,6 @@ import {TableService} from "../../services/table/table.service";
 
 export class TableListComponent implements OnInit {
     public tables: TableInfo[];
-    @Output("close-tables") public closeTables: EventEmitter<any> = new EventEmitter();
 
     constructor(private _tableService: TableService) {
 
@@ -19,11 +17,11 @@ export class TableListComponent implements OnInit {
 
     public ngOnInit() {
         this._tableService.getTableList().subscribe(
-            data => this.tables = data
+            (data: TableInfo[]) => this.tables = data
         );
     }
 
     public close() {
-        this.closeTables.emit(null);
+        this._tableService.showTableList = false;
     }
 }

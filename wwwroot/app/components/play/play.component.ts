@@ -1,5 +1,6 @@
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 import {TableListComponent} from "../table-list/table-list.component";
+import {TableService} from "../../services/table/table.service";
 import {CashierComponent} from "../cashier/cashier.component";
 import {PokerWindowComponent} from "../poker-window/poker-window.component";
 
@@ -12,14 +13,7 @@ import {PokerWindowComponent} from "../poker-window/poker-window.component";
 export class PlayComponent {
     public tableListId: string = "tables";
     public cashierId: string = "cashier";
-    public tableListVisible: boolean = true;
-    public cashierVisible: boolean = false;
 
-    public closeTableList() {
-        this.tableListVisible = false;
-    }
-
-    public closeCashier() {
-        this.cashierVisible = false;
+    constructor(private _tableService: TableService) {
     }
 }

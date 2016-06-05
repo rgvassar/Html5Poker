@@ -1,6 +1,6 @@
-import {Component} from "angular2/core";
-import {Router} from "angular2/router";
-import {FormBuilder, Validators, ControlGroup, Control} from "angular2/common";
+import {Component} from "@angular/core";
+import {Router} from "@angular/router-deprecated";
+import {FormBuilder, Validators, ControlGroup, Control} from "@angular/common";
 import {AccountService} from "../../services/account/account.service";
 
 @Component({
@@ -37,7 +37,7 @@ export class RegisterComponent {
         }
         if (this.passwordsMatch) {
             this._accountService.addAccount(this.email, this.displayName, this.password.value).subscribe(
-                data => this._router.navigate(["PlayPoker"])
+                () => this._router.navigate(["PlayPoker"])
             );
         }
     }
