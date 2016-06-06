@@ -8,6 +8,7 @@ export interface IAccount extends mongoose.Document {
     fundsInPlay: number;
     password: string;
     playerName: string;
+    checkPassword: (guess: string, next: Function) => void;
 }
 
 const accountSchema = new Schema({
