@@ -3,10 +3,11 @@ import * as bodyParser from "body-parser";
 import * as mongoose from "mongoose";
 import * as tableRouter from "./routes/table-router";
 import * as accountRouter from "./routes/account-router";
+import * as signinRouter from "./routes/signin-router";
 import * as cookieParser from "cookie-parser";
 import * as passport from "passport";
 import * as session from "express-session";
-import {passportInit} from "./passportInit";
+import {passportInit} from "./passportHelpers";
 
 const app: express.Express = express();
 passportInit();
@@ -27,6 +28,7 @@ app.use("/node_modules", express.static(__dirname + "/node_modules" ));
 app.get("/tables", tableRouter.tables);
 app.get("/account", accountRouter.getAccount);
 app.post("/account", accountRouter.addAccount);
+app.post("/signin", signinRouter.signin);
 app.use((req, res) => {
     res.sendFile("wwwroot/index.html", {root: __dirname});
 });

@@ -1,6 +1,7 @@
 import {IAccount, accountModel} from "./models/account.model";
 import * as passport from "passport";
 import * as passportLocal from "passport-local";
+import * as express from "express";
 
 const LocalStrategy = passportLocal.Strategy;
 
@@ -34,4 +35,12 @@ export function passportInit(): void {
             });
         });
     }));
+};
+
+export function ensureAuthenticated(req: any, res: express.Response, next: Function): void {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.status(401).send();
+    }
 };
